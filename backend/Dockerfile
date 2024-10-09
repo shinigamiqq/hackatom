@@ -5,4 +5,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD ["python", "main_router.py"]
+CMD ["uvicorn", "main_router:app", "--reload", "--host", "0.0.0.0"]
