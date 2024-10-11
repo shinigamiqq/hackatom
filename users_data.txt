@@ -1,0 +1,8 @@
+{"id":1,"username":"admin","name":"Кудж Станислав"}
+
+----- User ID: 1 -----
+
+{"id":2,"username":"katya","name":"Мизулина Екатерина"}
+
+----- User ID: 2 -----
+

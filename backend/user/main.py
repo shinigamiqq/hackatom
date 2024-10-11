@@ -16,7 +16,7 @@ import logging
 app = APIRouter()
 
 oath2_scheme = OAuth2PasswordBearer(tokenUrl="token")
-DATABASE_URL = "postgresql://postgres@localhost:5432/hackatom"
+DATABASE_URL = "postgresql://postgres:postgres@postgres_db:5432/hackatom"
 
 engine = create_engine(url=DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -43,7 +43,7 @@ def get_db():
     finally:
         db.close()
 
-@app.get('/user/{id}', response_model=UserResponse)
+@app.get('/user/{id}', response_model=UserResponse, tags=["users"])
 async def get_user(id: int, db: SessionLocal = Depends(get_db)):
     user = db.query(User).filter(User.id == id).first()
     if not user:

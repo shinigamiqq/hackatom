@@ -13,7 +13,7 @@ from sqlalchemy.orm import sessionmaker
 app = APIRouter()
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl='token')
-DATABSE_URL = "postgresql://postgres@localhost:5432/hackatom"
+DATABSE_URL = "postgresql://postgres:postgres@postgres_db:5432/hackatom"
 
 engine = create_engine(url=DATABSE_URL)
 SessionLocal = sessionmaker(autoflush=False, bind=engine)
@@ -54,7 +54,7 @@ def verify_password(username, password):
             return True
     return False
 
-@app.post("/login")
+@app.post("/login", tags=["users"])
 async def login(login_request: LoginRequest):
     if not verify_password(login_request.username, login_request.password):
         raise HTTPException(status_code=401, detail='неверный пароль')

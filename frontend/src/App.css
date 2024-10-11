@@ -1,88 +1,66 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Добавьте эти стили в App.css */
 
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f4f8;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.login-container {
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
+.app-container {
   text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-h1 {
-  margin-bottom: 20px;
-  color: #333;
+.header {
+  background-color: #1E90FF; /* Синий цвет шапки */
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 50px; /* Размер логотипа */
+  margin-right: 20px;
+}
+
+.welcome-container {
+  padding: 20px;
+}
+
+.login-container, .welcome-container {
+  margin-top: 50px;
 }
 
 .form-group {
   margin-bottom: 20px;
-  text-align: left;
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #555;
 }
 
 .input-field {
-  width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.input-field:focus {
-  border-color: #007bff;
+  width: 200px;
 }
 
 .submit-btn {
-  width: 100%;
-  padding: 12px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #1E90FF; /* Кнопка синего цвета */
+  color: white;
+  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .submit-btn:hover {
-  background-color: #0056b3;
+  background-color: #4682B4;
 }
 
 .error {
   color: red;
-  margin-bottom: 20px;
+  font-weight: bold;
 }
 
-.welcome-container {
-  text-align: center;
+.command-form {
+  margin-top: 20px; /* Отступ сверху для формы команд */
 }
 
-.welcome-container h1 {
-  color: #28a745;
-}
-
-.welcome-container p {
-  font-size: 18px;
+.command-result {
+  background-color: #f0f8ff; /* Светлый фон для результата команды */
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  white-space: pre-wrap; /* Чтобы сохранять пробелы и переносы строк */
 }

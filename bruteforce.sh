@@ -14,7 +14,7 @@ while IFS= read -r username; do
   while IFS= read -r password; do
     # Отправляем POST-запрос с текущими именем пользователя и паролем
     response=$(curl -sk -X 'POST' \
-      'http://127.0.0.1:8000/login' \
+      'http://localhost/api/login' \
       -H 'accept: application/json' \
       -H 'Content-Type: application/json' \
       -d '{
